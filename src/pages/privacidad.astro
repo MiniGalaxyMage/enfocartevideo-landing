@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Política de Privacidad — EnfocarteVideo"
+  description="Política de privacidad de EnfocarteVideo. Información sobre el tratamiento de tus datos personales conforme al RGPD."
+>
+  <Navbar />
+  <main class="legal-page">
+    <div class="legal-page__hero">
+      <div class="container">
+        <span class="section-label">Legal</span>
+        <h1 class="legal-page__title">Política de Privacidad</h1>
+        <p class="legal-page__date">Última actualización: marzo de 2025</p>
+      </div>
+    </div>
+
+    <div class="container legal-page__content">
+      <div class="legal-prose">
+
+        <section>
+          <h2>1. Responsable del tratamiento</h2>
+          <p>
+            <strong>EnfocarteVideo</strong><br />
+            Ciudad Real, Castilla-La Mancha<br />
+            Correo electrónico: <a href="mailto:hola@enfocartevideo.com">hola@enfocartevideo.com</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Datos que recopilamos</h2>
+          <p>A través del formulario de contacto recopilamos los siguientes datos personales:</p>
+          <ul>
+            <li>Nombre y apellidos</li>
+            <li>Dirección de correo electrónico</li>
+            <li>Número de teléfono (opcional)</li>
+            <li>Información sobre tu proyecto o evento</li>
+          </ul>
+          <p>
+            No recopilamos datos de navegación ni utilizamos cookies de seguimiento o análisis.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Finalidad del tratamiento</h2>
+          <p>Los datos recogidos a través del formulario se utilizan exclusivamente para:</p>
+          <ul>
+            <li>Responder a tu solicitud de presupuesto o consulta</li>
+            <li>Gestionar la relación comercial derivada de tu solicitud</li>
+          </ul>
+          <p>No cedemos tus datos a terceros ni los utilizamos para enviar comunicaciones comerciales no solicitadas.</p>
+        </section>
+
+        <section>
+          <h2>4. Base legal del tratamiento</h2>
+          <p>
+            El tratamiento de tus datos se basa en el consentimiento que otorgas al enviar el formulario de contacto,
+            conforme al artículo 6.1.a) del Reglamento (UE) 2016/679 (RGPD).
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Conservación de los datos</h2>
+          <p>
+            Conservamos tus datos durante el tiempo necesario para atender tu solicitud y, en caso de establecerse
+            una relación comercial, durante el período legalmente establecido para el cumplimiento de obligaciones
+            legales y fiscales.
+          </p>
+        </section>
+
+        <section>
+          <h2>6. Tus derechos</h2>
+          <p>Conforme al RGPD y la LOPDGDD tienes derecho a:</p>
+          <ul>
+            <li><strong>Acceso:</strong> conocer qué datos tuyos tratamos.</li>
+            <li><strong>Rectificación:</strong> corregir datos inexactos.</li>
+            <li><strong>Supresión:</strong> solicitar la eliminación de tus datos.</li>
+            <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos.</li>
+            <li><strong>Limitación:</strong> solicitar que limitemos el uso de tus datos.</li>
+            <li><strong>Portabilidad:</strong> recibir tus datos en formato estructurado.</li>
+          </ul>
+          <p>
+            Para ejercer tus derechos, envíanos un email a
+            <a href="mailto:hola@enfocartevideo.com">hola@enfocartevideo.com</a>.
+            También puedes presentar una reclamación ante la
+            <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos (AEPD)</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>7. Seguridad</h2>
+          <p>
+            Aplicamos medidas técnicas y organizativas adecuadas para proteger tus datos frente al acceso no
+            autorizado, pérdida o destrucción. Esta web utiliza conexión segura HTTPS.
+          </p>
+        </section>
+
+        <div class="legal-prose__back">
+          <a href="/" class="btn btn--primary">← Volver al inicio</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal-page__hero {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    padding: 7rem 0 4rem;
+    margin-bottom: 0;
+  }
+
+  .legal-page__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-page__date {
+    font-size: 0.85rem;
+    color: rgba(248, 249, 250, 0.4);
+    margin-top: 0.5rem;
+  }
+
+  .legal-page__content {
+    padding-block: 4rem;
+  }
+
+  .legal-prose {
+    max-width: 720px;
+  }
+
+  .legal-prose section {
+    margin-bottom: 2.5rem;
+  }
+
+  .legal-prose h2 {
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+    margin-bottom: 0.75rem;
+  }
+
+  .legal-prose p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .legal-prose ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .legal-prose ul li {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 0.25rem;
+  }
+
+  .legal-prose a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .legal-prose__back {
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border-light);
+    margin-top: 2rem;
+  }
+</style>

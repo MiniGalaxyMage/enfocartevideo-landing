@@ -1,0 +1,282 @@
+---
+---
+
+<section class="hero" id="inicio">
+  <!-- Background cinematic gradient -->
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__bg-gradient"></div>
+    <!-- Decorative camera/lens SVG shape -->
+    <div class="hero__bg-shape">
+      <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="400" cy="300" r="280" stroke="rgba(230,57,70,0.12)" stroke-width="1.5"/>
+        <circle cx="400" cy="300" r="220" stroke="rgba(230,57,70,0.08)" stroke-width="1"/>
+        <circle cx="400" cy="300" r="160" stroke="rgba(212,160,23,0.1)" stroke-width="1"/>
+        <circle cx="400" cy="300" r="80" fill="rgba(230,57,70,0.06)"/>
+      </svg>
+    </div>
+    <!-- Diagonal accent line -->
+    <div class="hero__accent-line"></div>
+  </div>
+
+  <div class="container hero__content">
+    <!-- Label -->
+    <div class="hero__label reveal">
+      <span class="hero__label-dot"></span>
+      Ciudad Real · Castilla-La Mancha
+    </div>
+
+    <!-- Headline -->
+    <h1 class="hero__title reveal reveal-delay-1">
+      Capturamos la Acción.<br>
+      <span class="hero__title-accent">Contamos Tu Historia.</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="hero__subtitle reveal reveal-delay-2">
+      Producción audiovisual, streaming deportivo en directo<br class="hide-mobile">
+      y fotografía profesional en Ciudad Real.
+    </p>
+
+    <!-- CTAs -->
+    <div class="hero__actions reveal reveal-delay-3">
+      <a href="#contacto" class="btn btn--primary hero__btn-primary">
+        Solicita Presupuesto
+      </a>
+      <a href="#portfolio" class="btn btn--outline hero__btn-secondary">
+        Ver Trabajos
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero__stats reveal reveal-delay-4">
+      <div class="hero__stat">
+        <span class="hero__stat-num">+5</span>
+        <span class="hero__stat-label">Años de experiencia</span>
+      </div>
+      <div class="hero__stat-divider" aria-hidden="true"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">CMM</span>
+        <span class="hero__stat-label">Colaboración Play</span>
+      </div>
+      <div class="hero__stat-divider" aria-hidden="true"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">608</span>
+        <span class="hero__stat-label">Seguidores Instagram</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-line"></span>
+    <span class="hero__scroll-text">Scroll</span>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    overflow: hidden;
+    padding-top: 72px; /* navbar height */
+  }
+
+  /* ---- Background ---- */
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero__bg-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(230, 57, 70, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 10% 80%, rgba(212, 160, 23, 0.05) 0%, transparent 50%),
+      linear-gradient(160deg, #111 0%, #1a1a1a 100%);
+  }
+
+  .hero__bg-shape {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    max-width: 700px;
+    opacity: 0.6;
+  }
+
+  .hero__accent-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent, var(--color-secondary), transparent);
+  }
+
+  /* ---- Content ---- */
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: clamp(4rem, 10vw, 7rem);
+    max-width: var(--container-max);
+  }
+
+  .hero__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(248, 249, 250, 0.5);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero__label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(230, 57, 70, 0); }
+  }
+
+  .hero__title {
+    font-size: clamp(2.6rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__title-accent {
+    color: var(--color-secondary);
+    display: inline-block;
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: rgba(248, 249, 250, 0.65);
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  /* ---- Actions ---- */
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  /* ---- Stats ---- */
+  .hero__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+  }
+
+  .hero__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .hero__stat-num {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--color-secondary);
+    line-height: 1;
+  }
+
+  .hero__stat-label {
+    font-size: 0.75rem;
+    color: rgba(248, 249, 250, 0.5);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .hero__stat-divider {
+    width: 1px;
+    height: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: none;
+  }
+
+  /* ---- Scroll indicator ---- */
+  .hero__scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3));
+    animation: scroll-line 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-line {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  .hero__scroll-text {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ---- Responsive ---- */
+  @media (min-width: 640px) {
+    .hide-mobile {
+      display: inline;
+    }
+
+    .hero__stat-divider {
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero__btn-primary,
+    .hero__btn-secondary {
+      font-size: 0.95rem;
+      padding: 1rem 2.25rem;
+    }
+  }
+</style>

@@ -1,0 +1,203 @@
+/* =====================================================
+   ENFOCARTEVIDEO — Global CSS
+   Design tokens, reset, typography, animations
+   ===================================================== */
+
+/* ---- Tokens ---- */
+:root {
+  --color-primary: #1A1A1A;
+  --color-secondary: #E63946;
+  --color-accent: #D4A017;
+  --color-bg-light: #F8F9FA;
+  --color-bg-dark: #1A1A1A;
+  --color-text-dark: #1A1A1A;
+  --color-text-light: #F8F9FA;
+  --color-text-muted: #6C757D;
+  --color-border-light: rgba(0, 0, 0, 0.1);
+  --color-border-dark: rgba(255, 255, 255, 0.1);
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', 'Source Sans 3', sans-serif;
+
+  --section-padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 5vw, 2rem);
+  --container-max: 1200px;
+  --radius: 8px;
+  --radius-lg: 16px;
+
+  --transition: 0.3s ease;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-card-dark: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Layout helpers ---- */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2rem);
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.section--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.section--light {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background-color: var(--color-secondary);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.35);
+}
+
+.btn--primary:hover {
+  background-color: #c82333;
+  box-shadow: 0 6px 24px rgba(230, 57, 70, 0.45);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-text-light);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn--outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+/* ---- Section labels ---- */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.section-label--gold {
+  color: var(--color-accent);
+}
+
+/* ---- Reveal animations (NO opacity:0) ---- */
+.reveal {
+  transform: translateY(32px);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ---- Divider ---- */
+.divider {
+  width: 3rem;
+  height: 3px;
+  background-color: var(--color-secondary);
+  border: none;
+  margin-block: 1.25rem;
+}
+
+.divider--gold {
+  background-color: var(--color-accent);
+}
+
+/* ---- Badge ---- */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge--streaming { background-color: rgba(230, 57, 70, 0.15); color: #e63946; }
+.badge--foto     { background-color: rgba(212, 160, 23, 0.15); color: #c49010; }
+.badge--video    { background-color: rgba(99, 102, 241, 0.15); color: #6366f1; }
+.badge--produccion { background-color: rgba(16, 185, 129, 0.15); color: #10b981; }
+.badge--contenido  { background-color: rgba(244, 114, 182, 0.15); color: #ec4899; }
